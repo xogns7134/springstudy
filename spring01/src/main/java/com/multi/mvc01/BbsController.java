@@ -1,5 +1,7 @@
 package com.multi.mvc01;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +43,22 @@ public class BbsController {
 		int result = dao.delete(bag);
 		// views/delete2.jsp를 만들어서 결과를 출력
 		model.addAttribute("result", result);
+	}
+
+	@RequestMapping("one")
+	public void one(BbsDTO2 dto, Model model) throws Exception {
+		System.out.println(dto);
+		BbsDAO dao = new BbsDAO();
+		BbsDTO2 bag = dao.one(dto);
+		model.addAttribute("bag", bag);
+	}
+	
+	@RequestMapping("list")
+	public void list(Model model) throws Exception {
+		BbsDAO dao = new BbsDAO();
+		ArrayList<BbsDTO2> list = dao.list();
+		System.out.println(list.size());
+		model.addAttribute("list", list);
 	}
 
 }
