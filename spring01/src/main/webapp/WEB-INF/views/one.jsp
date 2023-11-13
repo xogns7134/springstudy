@@ -9,7 +9,9 @@
 </head>
 <body bgcolor="yellow">
 <%
-	BbsDTO2 bag = (BbsDTO2)request.getAttribute("bag");
+	//컨트롤러에서 모델로 지정한 것 request.getAttribute("모델이름");
+	BbsDTO2 bag = (BbsDTO2)request.getAttribute("bag"); 
+	//작 = (작)큰;
 %>
 게시판 id <%= bag.getId() %> <br>
 게시판 title <%= bag.getTitle() %> <br>
