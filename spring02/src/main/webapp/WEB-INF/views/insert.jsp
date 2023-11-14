@@ -9,7 +9,7 @@
 <body>
 	<h4>북마크가 추가되었습니다.</h4>
 	<a href="index.jsp">
-	<button>첫 화면으로 돌아가기</button>
+		<button>첫 화면으로 돌아가기</button>
 	</a>
 </body>
 </html>
