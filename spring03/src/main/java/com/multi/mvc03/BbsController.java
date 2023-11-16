@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // 싱글톤 + 컨트롤러 등록
 public class BbsController {
@@ -38,9 +39,16 @@ public class BbsController {
 		model.addAttribute("list", list);
 	}
 	
+	@RequestMapping("jsonbbs")
+	@ResponseBody
+	public List<BbsDTO> jsonbbs() throws Exception {
+		List<BbsDTO> list = dao.list();
+		return list;
+	}
+	
 	// 요청하나당 함수하나.
-	@RequestMapping("insert2")
-	public void insert2(BbsDTO bag, Model model) {
+	@RequestMapping("insert")
+	public void insert(BbsDTO bag, Model model) {
 		System.out.println(bag);
 		// db처리 --> views/insert2.jsp결과를 출력해주세요.
 		int result = dao.insert(bag);
@@ -51,8 +59,8 @@ public class BbsController {
 		model.addAttribute("result", result);
 	}
 
-	@RequestMapping("update2")
-	public String update2(BbsDTO bag) {
+	@RequestMapping("update")
+	public String update(BbsDTO bag) {
 		int result = dao.update(bag);
 		// views에 update2.jsp를 만드세요.
 		if (result == 1) {
@@ -62,8 +70,8 @@ public class BbsController {
 		}
 	}
 
-	@RequestMapping("delete2")
-	public void delete2(BbsDTO bag, Model model) {
+	@RequestMapping("delete")
+	public void delete(BbsDTO bag, Model model) {
 		// bag에 넣고
 		// dao를 이용해서 db처리하고
 		int result = dao.delete(bag);
