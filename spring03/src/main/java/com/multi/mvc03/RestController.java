@@ -1,7 +1,9 @@
 package com.multi.mvc03;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class RestController {
 
+	@Autowired
+	MymapDAO mymapDAO;
+	
 	@RequestMapping("string")
 	@ResponseBody // controller에서 data를 return할 때(view를 만들 필요가 없음)
 	public String name() {
@@ -39,5 +44,26 @@ public class RestController {
 			list.add(bbsDTO);
 		}
 		return list;
+	}
+
+	@RequestMapping("map1")
+	@ResponseBody
+	public MymapDTO kakaoMap() {
+		MymapDTO map = new MymapDTO();
+		map.setLat(37.511);
+		map.setLon(127.059);
+		return map;
+	}
+	
+	@RequestMapping("map2")
+	@ResponseBody
+	public MymapDTO one(String location) {
+		return mymapDAO.one(location);
+	}
+	
+	@RequestMapping("map3")
+	@ResponseBody
+	public List<MymapDTO> all() {
+		return mymapDAO.all();
 	}
 }
