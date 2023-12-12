@@ -2,22 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gallery">
-    <insert id="insertGallery" parameterType="GalleryVO">
-        INSERT INTO gallery (galleryID, galleryName, galleryAddress, galleryNumber, operatingHours, closeDays)
-        VALUES (#{galleryID}, #{galleryName}, #{galleryAddress}, #{galleryNumber}, #{operatingHours}, #{closeDays})
-    </insert>
     <select id="oneGallery" resultType="GalleryVO">
         SELECT * FROM gallery WHERE galleryID = #{galleryID}
     </select>
-    <update id="updateGallery" parameterType="GalleryVO">
-        UPDATE gallery
-        SET galleryName = #{galleryName}, galleryAddress = #{galleryAddress},
-            galleryNumber = #{galleryNumber}, operatingHours = #{operatingHours}, closeDays = #{closeDays}
-        WHERE galleryID = #{galleryID}
-    </update>
-    <delete id="deleteGallery" parameterType="String">
-        DELETE FROM gallery WHERE galleryID = #{galleryID}
-    </delete>
     <select id="listGallery" resultType="GalleryVO">
         SELECT * FROM gallery
     </select>
