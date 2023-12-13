@@ -14,10 +14,11 @@ public class GalleryController {
 	@Autowired
 	GalleryDAO galleryDAO;
 	
-	@RequestMapping("oneGallery/{galleryID}")
-	public void oneGallery(@PathVariable int galleryID, Model model) throws Exception {
-		GalleryVO galleryVO = galleryDAO.oneGallery(galleryID);
-		model.addAttribute("galleryVO", galleryVO);
+	@RequestMapping("searchGallery/{galleryName}")
+	public String searchGallery(@PathVariable String galleryName, Model model) throws Exception {
+		List<GalleryVO> searchGallery = galleryDAO.searchGallery(galleryName);
+		model.addAttribute("searchGallery", searchGallery);
+		return "searchGallery";
 	}
 	
 	@RequestMapping("listGallery")
