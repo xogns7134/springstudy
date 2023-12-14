@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="resources/css/tables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 <title>미술관 선택</title>
 <script type="text/javascript" src="resources/js/jquery-3.7.1.js"></script>
 <script type="text/javascript">

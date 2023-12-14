@@ -4,10 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.multi.reservation.GalleryVO"
-			alias="galleryVO"></typeAlias>
+		<typeAlias type="com.multi.reservation.GalleryVO" alias="galleryVO"></typeAlias>
+		<typeAlias type="com.multi.reservation.ExhibitionVO" alias="exhibitionVO"></typeAlias>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/galleryMapper.xml" />
+		<mapper resource="mapper/exhibitionMapper.xml" />
 	</mappers>
 </configuration>
