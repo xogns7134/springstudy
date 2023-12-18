@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="yellow">
-<h3>네이버 소셜로그인으로 회원가입까지 성공함.</h3>
+<h3>네이버 소별로그인으로 회원가입까지 성공함.</h3>
 </body>
 </html>

@@ -14,9 +14,9 @@ public class ExhibitionController {
 	@Autowired
 	ExhibitionDAO exhibitionDAO;
 	
-	@RequestMapping("exhibitionSelection/{galleryId}")
-	public String exhibitionSelection(@PathVariable int galleryId, Model model) {
-		List<ExhibitionVO> listExhibition = exhibitionDAO.listExhibition(galleryId);
+	@RequestMapping("exhibitionSelection/{galleryID}")
+	public String exhibitionSelection(@PathVariable int galleryID, Model model) {
+		List<ExhibitionVO> listExhibition = exhibitionDAO.listExhibition(galleryID);
 		model.addAttribute("listExhibition", listExhibition);
 		return "exhibitionSelection";
 	}

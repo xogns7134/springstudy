@@ -22,8 +22,8 @@
 				<tbody>
 					<c:forEach var="gallery" items="${searchGallery}">
 						<tr>
-							<td><a href="<%= request.getContextPath() %>/exhibitionSelection/${gallery.galleryID}"><img src="${gallery.galleryImg}" alt="Gallery Image"></a></td>
-							<td><a href="<%= request.getContextPath() %>/exhibitionSelection/${gallery.galleryID}">${gallery.galleryName}</a></td>
+							<td><a href="${pageContext.request.contextPath}/exhibitionSelection/${gallery.galleryID}"><img src="${gallery.galleryImg}" alt="Gallery Image"></a></td>
+							<td><a href="${pageContext.request.contextPath}/exhibitionSelection/${gallery.galleryID}">${gallery.galleryName}</a></td>
 							<td>${gallery.galleryAddress}</td>
 							<td>${gallery.galleryNumber}</td>
 							<td>${gallery.operatingHours}</td>

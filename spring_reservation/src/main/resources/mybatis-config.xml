@@ -6,9 +6,11 @@
 	<typeAliases>
 		<typeAlias type="com.multi.reservation.GalleryVO" alias="galleryVO"></typeAlias>
 		<typeAlias type="com.multi.reservation.ExhibitionVO" alias="exhibitionVO"></typeAlias>
+		<typeAlias type="com.multi.reservation.ReservationVO" alias="reservationVO"></typeAlias>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/galleryMapper.xml" />
 		<mapper resource="mapper/exhibitionMapper.xml" />
+		<mapper resource="mapper/reservationMapper.xml" />
 	</mappers>
 </configuration>
